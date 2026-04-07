@@ -1,0 +1,146 @@
+
+ \begin{theglossary} 
+
+    \makeatletter\scan@allowedfalse
+
+  \item v2.0.0\efill 
+ \subitem General:\ Initial release of new design.\pfill \hdpindex{}{1}
+  \item v2.1.0\efill 
+ \subitem \verb*+\maketitle+:\ Fixed titling with accented/foreign characters.\pfill \hdpindex{}{7}
+  \item v2.2.0\efill 
+ \subitem \verb*+\maketitle+:\ Fixed distribution of vertical spacing.\pfill \hdpindex{}{7}
+  \item v2.3.0\efill 
+ \subitem \verb*+dedication+:\ if openright, force recto\pfill \hdpindex{}{11}
+    \subitem \verb*+\if@hyperloaded+:\ Added test for \textsf  {hyperref}\pfill \hdpindex{}{6}
+    \subitem \verb*+\makecommitteepage+:\ if openright, force recto\pfill \hdpindex{}{9}
+    \subitem \verb*+\maketitle+:\ Added \texttt  {pdfbookmark} to title page.\pfill \hdpindex{}{7}
+    \subitem \verb*+\tableofcontents+:\ Redefined from \textsf  {report} class to add \texttt  {pdfbookmark} for table of contents\pfill 
+		\hdpindex{}{12}
+  \item v3.0.0\efill 
+ \subitem General:\ Added \textsf  {ifpdf} package\pfill \hdpindex{}{2}
+      \subsubitem Added definitions for \texttt  {\char '134@subject} and \texttt  {\char '134@keywords}\pfill 
+		\hdpindex{}{7}
+      \subsubitem Change to FSU Guidelines bumps major version number; Enhanced PDF metadata.\pfill 
+		\hdpindex{}{1}
+    \subitem \verb*+\committeeperson+:\ Removed signature lines for new ETD format.\pfill \hdpindex{}{9}
+    \subitem \verb*+\commskip+:\ Renamed width and skip, removing reference to signatures.\pfill 
+		\hdpindex{}{8}
+    \subitem \verb*+\if@keywords+:\ Explicitly set PDF metadata.\pfill \hdpindex{}{10}
+    \subitem \verb*+\makecommitteepage+:\ changed from ``Signature Page'' to ``Committee Page'', removing signature lines and college-level approvals.\pfill 
+		\hdpindex{}{9}
+  \item v3.1.0\efill 
+ \subitem General:\ Improve handling of long table and figure captions.\pfill 
+		\hdpindex{}{1}
+    \subitem \verb*+\listspenalty+:\ Added new penalty item to allow long captions to be split between pages\pfill 
+		\hdpindex{}{12}
+    \subitem \verb*+\tableofcontents+:\ Prevent entries from being split between pages, restoring default \LaTeX  {} behavior\pfill 
+		\hdpindex{}{12}
+    \subitem \verb*+\topmargin+:\ Removed the \texttt  {\char '134 flushbottom} option from the default configuration.\pfill 
+		\hdpindex{}{2}
+  \item v3.2.0\efill 
+ \subitem General:\ Make special accommodations for the optional \textsf  {natbib} package.\pfill 
+		\hdpindex{}{15}
+  \item v3.3.0\efill 
+ \subitem General:\ Make special accommodations for the optional \textsf  {apacite} package.\pfill 
+		\hdpindex{}{15}
+    \subitem \verb*+\appendix+:\ Modified standard report macro to insert an extra ToC element\pfill 
+		\hdpindex{}{18}
+    \subitem \verb*+\appendixtocname+:\ Added a new symbol name to hold the Table of Contents heading for an appendix or appendices.\pfill 
+		\hdpindex{}{10}
+    \subitem \verb*+\l@appendix+:\ New formatting macro for the ToC appendix class\pfill \hdpindex{}{18}
+    \subitem \verb*+\l@backmatter+:\ Added a backmatter ToC class to handle References and Biographical Sketch separately from frontmatter\pfill 
+		\hdpindex{}{13}
+    \subitem \verb*+\l@frontmatter+:\ Added test for first frontmatter item to avoid extra vertical space after ToC header\pfill 
+		\hdpindex{}{12}
+    \subitem \verb*+\maketitle+:\ Added layout for \texttt  {copyright} option.\pfill \hdpindex{}{7}
+    \subitem \verb*+copyright+:\ Added new document option to add copyright declaration to the title page.\pfill 
+		\hdpindex{}{2}
+    \subitem \verb*+references+:\ Changed \texttt  {\char '134parskip} to use \texttt  {\char '134refitemsep}. Changed indentation to be consistent with \texttt  {apacite}.\pfill 
+		\hdpindex{}{14}
+    \subitem \verb*+singlespaced+:\ New environment providing single-spacing.\pfill \hdpindex{}{6}
+    \subitem \verb*+thebibliography+:\ Set \texttt  {\char '134itemsep} to \texttt  {\char '134refitemsep} and set \texttt  {\char '134parsep} to 0pt\pfill 
+		\hdpindex{}{15}
+    \subitem \verb*+verbatim+:\ Set \texttt  {verbatim} environment to revert to standard spacing when using \texttt  {expanded} spacing.\pfill 
+		\hdpindex{}{6}
+  \item v3.4.0\efill 
+ \subitem \verb*+\chapheadskip+:\ Changed spacing before chapter header to 0in.\pfill \hdpindex{}{17}
+    \subitem \verb*+\evenoddoffset+:\ Adjusted text width for hardcopy option since the text column is now wider.\pfill 
+		\hdpindex{}{3}
+    \subitem \verb*+\makecommitteepage+:\ Adjusted vertical spacing of the committee page and moved name column closer to center.\pfill 
+		\hdpindex{}{9}
+    \subitem \verb*+\maketitle+:\ Altered spacing for copyright on title page to be consistent with \textit  {Guidelines~2013}\pfill 
+		\hdpindex{}{7}
+      \subsubitem Removed ``THE'' from FLORIDA STATE UNIVERSITY.\pfill 
+		\hdpindex{}{7}
+    \subitem \verb*+\textwidth+:\ Set text column to 6.5\,inches.\pfill \hdpindex{}{3}
+  \item v3.5.0\efill 
+ \subitem General:\ Add \texttt  {\char '134interlinepenalty} to prevent page breaks mid-item.\pfill 
+		\hdpindex{}{15}
+    \subitem \verb*+\bibsection+:\ Added \texttt  {\char '134interlinepenalty} to prevent page breaks mid-item.\pfill 
+		\hdpindex{}{16}
+    \subitem \verb*+references+:\ Added \texttt  {\char '134interlinepenalty} to prevent page breaks mid-item.\pfill 
+		\hdpindex{}{14}
+    \subitem \verb*+\refindent+:\ Increased stretchiness of \texttt  {\char '134refitemsep} to facilitate un-breakable bibliography entries\pfill 
+		\hdpindex{}{14}
+    \subitem \verb*+thebibliography+:\ Added \texttt  {\char '134interlinepenalty} to prevent page breaks mid-entry.\pfill 
+		\hdpindex{}{15}
+  \item v3.6.0\efill 
+ \subitem General:\ Removed \texttt  {\char '134@semester} macro since it's no longer needed.\pfill 
+		\hdpindex{}{7}
+    \subitem \verb*+\maketitle+:\ Removed \texttt  {\char '134@semester} element to comply with change to FSU format.\pfill 
+		\hdpindex{}{7}
+    \subitem \verb*+\semester+:\ Made \texttt  {\char '134semester} macro a no-op to comply with change in FSU format.\pfill 
+		\hdpindex{}{7}
+  \item v3.7.0\efill 
+ \subitem \verb*+\@dottedtocline+:\ If pagenumbers exceed the allotted width, use the natural box width instead of the predefined width\pfill 
+		\hdpindex{}{12}
+    \subitem \verb*+\commskip+:\ Increased the name column width, moving column to the left to center it better.\pfill 
+		\hdpindex{}{8}
+    \subitem \verb*+\listbaselineskip+:\ New macro to replace previously hard-coded value\pfill \hdpindex{}{4}
+  \item v3.8.0\efill 
+ \subitem \verb*+\@dottedtocline+:\ Added grouping around \texttt  {\char '134 normalcolor} commands to prevent pdftex warnings\pfill 
+		\hdpindex{}{12}
+  \item v3.9.0\efill 
+ \subitem General:\ Updated layout requirements for dedication page.\pfill \hdpindex{}{1}
+    \subitem \verb*+dedication+:\ text on page should be vertically centered\pfill \hdpindex{}{11}
+  \item v3.9a.0\efill 
+ \subitem \verb*+\makecommitteepage+:\ Added \texttt  {0.4\char '134 baselineskip} to top of page for consistent \texttt  {\char '134 baselineskip} spacing throughout.\pfill 
+		\hdpindex{}{9}
+  \item v4.0.0\efill 
+ \subitem General:\ Add the \texttt  {\char '134f@biblatex} macro for \textsf  {biblatex} environment compatibility.\pfill 
+		\hdpindex{}{15}
+    \subitem \verb*+\f@biblatex+:\ Make minor adjustments to bibliography environment to support default biblatex structure\pfill 
+		\hdpindex{}{16}
+  \item v4.1.0\efill 
+ \subitem \verb*+\footskip+:\ Reset \texttt  {\char '134 footskip} to display the page number 3/4\,inch from page bottom.\pfill 
+		\hdpindex{}{2}
+    \subitem \verb*+\maketitle+:\ Adjusted spacing for copyright to since the footer location was dropped 1/4\,inch.\pfill 
+		\hdpindex{}{7}
+    \subitem \verb*+\topmargin+:\ Simplified \texttt  {\char '134 topmargin} calculation.\pfill 
+		\hdpindex{}{2}
+  \item v4.2.0\efill 
+ \subitem \verb*+\section+:\ Disabled hanging indent for centered section headings that take up multiple lines\pfill 
+		\hdpindex{}{17}
+  \item v4.3.0\efill 
+ \subitem \verb*+\paragraph+:\ Replaced \textsc  {Small Caps} headings with \sffamily  \textsl  {Slanted Sans Serif} headings.\pfill 
+		\hdpindex{}{17}
+  \item v5.0.0\efill 
+ \subitem General:\ Changes for 2023--2024 edition of FSU Guidelines\pfill \hdpindex{}{1}
+      \subsubitem Replaced \textsf  {ifpdf} package with the more general \textsf  {iftex} package\pfill 
+		\hdpindex{}{2}
+    \subitem \verb*+\chapheadskip+:\ Reduced point size of chapter headings\pfill \hdpindex{}{17}
+    \subitem \verb*+\section+:\ Reduced point size of section heading\pfill \hdpindex{}{17}
+  \item v5.1.0\efill 
+ \subitem General:\ Guarantee top-level headings remain within margins.\pfill 
+		\hdpindex{}{1}
+    \subitem \verb*+\@makeschapterhead+:\ Make chapter headings align with top margin\pfill \hdpindex{}{17}
+      \subsubitem Use plain \TeX  's \texttt  {\char '134 topskip} trick\pfill 
+		\hdpindex{}{17}
+    \subitem \verb*+\chapheadskip+:\ Reassigend 0in to \texttt  {\char '134 chapheadskip}\pfill 
+		\hdpindex{}{17}
+    \subitem \verb*+\footskip+:\ Modify the \texttt  {\char '134 textheight} and \texttt  {\char '134 footskip} calculation to closer tolerances.\pfill 
+		\hdpindex{}{2}
+    \subitem \verb*+\makecommitteepage+:\ Added \texttt  {\char '134 normalsize} at page end to restore normal \texttt  {\char '134 baselineskip}.\pfill 
+		\hdpindex{}{9}
+
+ \end{theglossary}

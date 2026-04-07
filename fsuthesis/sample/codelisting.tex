@@ -1,0 +1,69 @@
+%%% To test this chapter, the LaTeX engine needs to be set to
+%%% 'xelatex' or 'lualatex', since local TrueType mono-spaced fonts
+%%% will be loaded to produce nicer code listings.
+
+%%% The following two lines will need to be added to the document
+%%% preamble in 'thesis.tex'.
+
+%\usepackage{fontspec}
+%\usepackage{listings}
+
+\chapter{Testing Listings}
+
+%%% The Overleaf LaTeX website may also allow one to load alternative
+%%% fonts. However, the specific details of the parameters will be
+%%% different.
+
+%%% The font SplineSansMono is downloadable from Google in several
+%%% static weights, and includes italic forms. I found Scale=0.8 to
+%%% more closely match the ComputerModern x-height. Note that
+%%% \setmonofont will cause all subsequent \ttfamily references to use
+%%% this font.
+
+\setmonofont[Path=/usr/local/share/fonts/truetype/,
+  Scale=0.8,
+  BoldFont = SplineSansMono-SemiBold.ttf,
+  ItalicFont = SplineSansMono-LightItalic.ttf,
+  BoldItalicFont = SplineSansMono-SemiBoldItalic.ttf ]{SplineSansMono-Light.ttf}
+
+\lstset{%
+  columns=flexible,
+  keepspaces=true,
+  basicstyle=\small\ttfamily,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+  identifierstyle=\itshape}
+
+I'd like to preface this complete code segment with something pithy
+and useful, but I think we all know that I can't handle the truth, and
+so, at best, this will be a run-on sentence whose whole purpose is to
+make a prelude paragraph of rambling text, to fill space, waste the
+reader's time, and provide contrasting text shapes for comparison to
+the code segment.
+
+% note: 34pt = 2\parindent for LaTeX 11pt document size
+\begin{figure}[h]
+\begin{lstlisting}[language=C,
+    showstringspaces=true,
+    numbers=left,
+    numberstyle=\scriptsize\itshape,
+    stepnumber=3,
+    xleftmargin=34pt,
+    xrightmargin=34pt,
+    frame=leftline,
+  ]
+#include <stdio.h>
+int main(void)
+{
+    int myvar = 4;  /* I'd like to comment on this... */
+    printf("Hello, World!\n");
+    printf("  myvar=%d\n", myvar);
+}
+\end{lstlisting}
+\caption{A complete, if useless, C program}
+\end{figure}
+
+And after the listing, I won't have any more to say, but I'll need to
+type enough material to fill at least two lines, since I think short,
+one-line paragraphs just aren't typographically satisfying.
+

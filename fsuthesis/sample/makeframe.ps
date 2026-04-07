@@ -1,0 +1,39 @@
+%!PS
+<<
+/BeginPage {
+    /count exch def   % count of previous showpage calls for this device
+
+    % underlay centerline
+    0 setlinewidth
+    0.7 setgray
+    72 4.25 mul 72 0.75 mul moveto
+    0 72 9.25 mul rlineto
+    stroke
+} bind
+/EndPage {
+    /code exch def   % 0=showpage, 1=copypage, 2=setpagedevice
+    /count exch def  % count of previous showpage calls for this device
+
+    0 0 0 setrgbcolor
+
+    0 setlinewidth
+
+    % overlay a frame with a 1-inch offset from edge of page
+    72 72 moveto
+    0 72 9 mul rlineto
+    72 6.5 mul 0 rlineto
+    0 72 -9 mul rlineto
+    closepath stroke
+
+    % overlay a frame with 3/4-inch boundry from bottom of page
+    72 0.75 72 mul moveto
+    0 0.25 72 mul rlineto
+    72 6.5 mul 0 rlineto
+    0 -0.25 72 mul rlineto
+    closepath stroke
+
+
+    % Return true to output the page
+    code 1 le
+} bind
+>> setpagedevice
