@@ -1,5 +1,5 @@
 %\documentclass{article}
-\documentclass[11pt,expanded,copyright]{fsuthesis}
+\documentclass[11pt,copyright]{fsuthesis}
 
 % Language setting
 % Replace `english' with e.g. `spanish' to change the document language
@@ -11,8 +11,6 @@
 %\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
 % Useful packages
-\usepackage{amsmath}
-\usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{mhchem}
@@ -20,7 +18,6 @@
 \graphicspath{{figures/}}
 \usepackage{verbatim}
 \usepackage{pgfplots}
-\usepackage{graphicx}
 \usepackage{csquotes}
 
 \usepackage[backend=biber, style=numeric]{biblatex}
@@ -29,11 +26,11 @@
 \title{INVESTIGATIONS OF NUCLEAR STRUCTURE IN MASS-9 SYSTEMS USING NEUTRON SPECTROSCOPY}
 \author{Matthew Gerard Mestayer II}
 \college{Florida State University}
-\department{Nuclear Physics Department}
+\department{Physics Department}
 \manuscripttype{Dissertation}
 \degree{PhD}
 \degreeyear{2026}
-\defensedate{October 31, 2021}
+\defensedate{April 27, 2026}
 
 \committeeperson{Sergio Almaraz-Calderon}{Thesis Director}
 \committeeperson{Ingo Widenhover}{Committee Member}
@@ -54,8 +51,9 @@
 \tableofcontents
 
 \begin{abstract}
-The mass 9 nuclear systems represents a significant deviation from the IMME, 
-prompting investigation over non-trivial effects arising from isospin and nuclear structure considerations. 
+Mirror nuclei present a rich ground for testing isospin-symmetry breaking effects, especially the mass-9 isospin systems due to their deviations from the Isobaric Mass Multiplet Equation. In particular, an observation of the $\frac{1}{2}+$ state in $^9B$ would serve as a probe of Thomas-Ehrman effects in this system, since the direction of the shift is ambiguous. 
+
+The proper characterization of the $\frac{1}{2}+$ state of $^9B$ is an ongoing challenge due to the broadness of the state and the presence of interferring resonances. In order to observe this state, the $^7Li(^3He,n)$ reaction is used. The neutron from this reaction are detected by CATRiNA, an array of liquid scintillators. From excitation spectra, comparisons were made to previous measurements of this nucleus. Future goals are listed.
 \end{abstract}
 
 \mainmatter
@@ -65,24 +63,22 @@ prompting investigation over non-trivial effects arising from isospin and nuclea
 
 \section{Motivation}
 
-One of the great triumphs of the past century of physics has been the illumination of the internal structure of the atom. It is well known that  atomic nuclei are comprised of protons and neutrons and are held together by the strong force. It is also well-known that the interaction of these nuclei are constrained by quantum numbers such as isospin. 
-\\ \\
 Isospin is a good quantum number when describing strongly interacting nucleons. Under the formalism describing isopsin, protons and neutrons both have total isospin $T=\frac{3}{2}$. Similar to intrinsic spin, the isospin z-projection $T_z$ takes the values $\mp\frac{1}{2}$ for protons and neutrons respectively. Historically, isospin was derived from W. Heisenberg's attempt to treat both protons and neutrons as two states of the same particle, which was expanded upon by E. Wigner and given the name 'isotopic spin' as a means of listing the emergent symmetries of strongly-interacting nuclear systems \cite{wigner1937consequences}. In particular, this 'isotopic spin', or isospin, plays a crucial role in defining Isobaric Analog States (IAS), which are states with equivalent isospin $T$ with differing $T_z$ values. From just the strong interaction, IAS would have equivalent energy levels. Due to the presence of Coulombinteractions from proton-proton repulsion, the isospin symmetry between IAS is broken, giving rise to differences in energy levels \cite{zelevinsky2017physics}. The contributions to these energy shifts arise from various admixtures from interactions within the nucleus.
 \\ \\
-An example is the Thomas-Ehrman shift, an additional energy shift between the energy states in mirror nuclei from higher-order Coulomb interactions. Initially proposed by J. Ehrman and R. Thomas to describe the displacement in the first excited states between $C^{13}$ and $N^{13}$\cite{ehrman1951displacement} \cite{thomas1952analysis}, this shift is attributed to the interaction between nuclei structured as a core and valence nucleon. This extra shift supresses energy levels in proton-rich nuclei and is usually more pronounced in states with a weak centrifugal barrier. In particular, the mirror-pair ${^9B}$ and ${^9Be}$ offer a system which may exhibit a non-trivial TE contribution. 
+An example is the Thomas-Ehrman shift, an additional energy shift between the energy states in mirror nuclei from higher-order Coulomb interactions. Initially proposed by J. Ehrman and R. Thomas to describe the displacement in the first excited states between $C^{13}$ and $N^{13}$ \cite{ehrman1951displacement}\cite{thomas1952analysis}, this shift is attributed to the interaction between nuclei structured as a core and valence nucleon. This extra shift supresses energy levels in proton-rich nuclei and is usually more pronounced in states with a weak centrifugal barrier. In particular, the mirror-pair ${^9B}$ and ${^9Be}$ offer a system which may exhibit a non-trivial TE contribution. 
 \\ \\
-Since ${^9B}$ and ${^9Be}$ constitute an isopsin doublet, there should be a correspondence between the energy levels in both nuclei, accounting for Coulomb effects and proton/neutron mass differences. The $\frac{1}{2}+$ state in $^9Be$ is well measured with an excitation energy of 1.684 MeV \cite{Kuechler}, in contrast to the corresponding state in ${^9B}$. There is evidence that both nuclei exhibit a three-body nature, with $^9Be$ being a Borromean system \cite{von-Oertzen}. This indicates that both nuclei can be accurately represented as a core and valence nucleon systems. 
+Since ${^9B}$ and ${^9Be}$ constitute an isopsin doublet, there should be a correspondence between the energy levels in both nuclei, accounting for Coulomb effects and proton/neutron mass differences. The $\frac{1}{2}+$ state in $^9Be$ is well measured with an excitation energy of 1.684 MeV \cite{kuechler1987line}, in contrast to the corresponding state in ${^9B}$. There is evidence that both nuclei exhibit a three-body nature, with $^9Be$ being a Borromean system \cite{von1996two}. This indicates that both nuclei can be accurately represented as a core and valence nucleon systems. 
 \\ \\
-Various measurements of the $\frac{1}{2}+$ state in $^9B$ have been attempted. After the first official report in 1955 \cite{PhysRev.100.91}, other authors have attempted to characterize this state. Historically, two different values have been proposed for this state. In 1962, G. Symons measured the state at 1.7(2) MeV\cite{Symons}, which would be contrasted with M. Tiede, who found that the state seemingly split into values of 0.8 and 1.6 MeV \cite{tiedde1995}. Unsuccessful searches have continued; however, certain promising developments have recently occured. An solution to the apparent bifurcation of the $\frac{1}{2}+$ state was determined by Brooks et al, who proposed a "ghost peak" due to leakage of the ground state, appearing near 0.8 MeV. This would be followed by another paper which a resonance was characterized with an energy of $1.83(5) MeV$ and intrinsic width of $740^{110}_{88} keV$. However, this characterization did not could not unambiguously confirm this state as the $\frac{1}{2}+$ state since angular distributions could not be extracted\cite{5rny-7zbk}. Further work is required to properly characterize this state. 
+Various measurements of the $\frac{1}{2}+$ state in $^9B$ have been attempted. After the first official report in 1955 \cite{PhysRev.100.91}, other authors have attempted to characterize this state. Historically, two different values have been proposed for this state. In 1962, G. Symons measured the state at 1.7(2) MeV\cite{SYMONS1962175}, which would be contrasted with M. Tiede, who found that the state seemingly split into values of 0.8 and 1.6 MeV \cite{PhysRevC.52.1315}. Unsuccessful searches have continued; however, certain promising developments have recently occured. An solution to the apparent bifurcation of the $\frac{1}{2}+$ state was determined by Brooks et al, who proposed a "ghost peak" due to leakage of the ground state, appearing near 0.8 MeV. This would be followed by another paper which a resonance was characterized with an energy of $1.83(5) MeV$ and intrinsic width of $740^{110}_{88} keV$. However, this characterization did not could not unambiguously confirm this state as the $\frac{1}{2}+$ state since angular distributions could not be extracted\cite{5rny-7zbk}. Further work is required to properly characterize this state. 
 \\ \\
-In characterizing the $\frac{1}{2}+$ of $^9B$, the $(^3He,n)$ reaction has not been properly utilized. There have been studies into the structure of $^9B$ using this reaction, starting in 1965 with Dietrich's investigation using time-of-flight spectroscopy using a plastic scintillator for neutron measurement. Highly excited states in $^9B$ where measured at 12.06, 14.01, 14.67, and 16.04 MeV, along with an assignment of $T=\frac{3}{2}$ for the 14.67 MeV state, though no low lying states could be resolved. \cite{Dietrich}. The next work that found a potential $\frac{1}{2}+$ state was performed by K. Gul et al. Low lying states, such as the ground state, 2.345, 2.78, and 4.8 were identified, along with a peak between the ground state and the 2.33 state. However, this peak was attributed to a two-stage process of populating the 11.82 MeV state in $^9Be$ using $(^3He,p)$, followed by a neutron decay of $^9Be$ to $^8Be$ \cite{Gul}. After this work, no other study would make an explicit attempt to measure the $\frac{1}{2}+$ state using the $(^3He,n)$ reaction. A measurement of the the $\frac{1}{2}+$ state in $^9B$ using the $(^3He,n)$ reaction with modern detectors is sorely lacking.   
+In characterizing the $\frac{1}{2}+$ of $^9B$, the $(^3He,n)$ reaction has not been properly utilized. There have been studies into the structure of $^9B$ using this reaction, starting in 1965 with Dietrich's investigation using time-of-flight spectroscopy using a plastic scintillator for neutron measurement. Highly excited states in $^9B$ where measured at 12.06, 14.01, 14.67, and 16.04 MeV, along with an assignment of $T=\frac{3}{2}$ for the 14.67 MeV state, though no low lying states could be resolved. \cite{DIETRICH196549}. The next work that found a potential $\frac{1}{2}+$ state was performed by K. Gul et al. Low lying states, such as the ground state, 2.345, 2.78, and 4.8 were identified, along with a peak between the ground state and the 2.33 state. However, this peak was attributed to a two-stage process of populating the 11.82 MeV state in $^9Be$ using $(^3He,p)$, followed by a neutron decay of $^9Be$ to $^8Be$ \cite{gul197018o}. After this work, no other study would make an explicit attempt to measure the $\frac{1}{2}+$ state using the $(^3He,n)$ reaction. A measurement of the the $\frac{1}{2}+$ state in $^9B$ using the $(^3He,n)$ reaction with modern detectors is sorely lacking.   
 \\ \\
 The masses of nuclei within an isobaric multiplet are described by the Isobaric Multiplet Mass Equation (IMME): \\
 \[
 M(T_z)=a(\alpha,T_z) + b(\alpha,T_z)T_z + c(\alpha,T_z)T_z^2 \] \\
 where $\alpha$ refers to any other relevant quantum numbers besides the isospin and the z-projection. This equation is derived by assuming the nucleons interact via the strong interaction, $H_0$, then assuming that the two-body Coulomb interactions between protons can be treated as a perturbation to $H_0$. This results in an equation that is quadratic in $T_z$, requiring at least $T=\frac{3}{2}$ isospin states to validate this equation. In order to deduce the coefficients to this equation, a fit to the mass excess for the nucleus in question is required, usually deduced from a measurement of Q-value \cite{PhysRevLett.25.530}. A multiplet known to significantly deviate from this equation is the A = 9 $T=\frac{3}{2}$ quartet, involving $^9Li$, $^9Be$, $^9B$, and $^9C$. 
 \\ \\
-The value of the energy of the first $\frac{1}{2}+$ state of $^9B$ is currently an unresolved issue within nuclear physics. After the first attempted measurement of this state in 1955 \cite{PhysRev.100.91}, there have been many attempts to measure this state with various reaction channels. Unlike its mirror nucleus $^9Be$, the ground state of $^9B$ is unbound with a proton separation energy of -185.9 keV, meaning that all excited states exist as resonances. It lies in a region containing many broad resonances, making the task of measurement challenging. 
+The value of the energy of the first $\frac{1}{2}+$ state of $^9B$ is currently an unresolved issue within nuclear physics. After the first attempted measurement of this state in 1955 \cite{PhysRev.100.91}, there have been many attempts to measure this state with various reaction channels. Unlike its mirror nucleus $^9Be$, the ground state of $^9B$ is unbound with a proton separation energy of -185.9 keV \cite{Wang_2012}, meaning that all excited states exist as resonances. It lies in a region containing many broad resonances, making the task of measurement challenging. 
 
 %\input chapter2
 \chapter{Reaction Kinematics}
@@ -91,7 +87,7 @@ To populate states within nuclei, a commonly used method is to set up a reaction
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{kinematics.png}
+  \includegraphics[width=0.6\textwidth]{kinematics.png}
   \caption{Kinematic representation of transfer reaction.}
   \label{fig:Kinematics}
 \end{figure}
@@ -103,34 +99,35 @@ To derive the energies populated by the residual nucleus from the ejectile, one 
 \begin{equation}
 p_a+p_A=p_b+p_B (1)
 E_a+E_A=E_b+E_B (2)
-\end{equation}\\ \\
-where $E = \frac{p^2}{2m}+mc^2$. The conservation of momentum can be written as \\ \\
+\end{equation}\\
+where $E = \frac{p^2}{2m}+mc^2$. The conservation of momentum can be written as \\
 \begin{equation}
-p_a=p_bcos\theta+p_Bcos\epsilon (3) \\ \\
+p_a=p_bcos\theta+p_Bcos\epsilon (3) \\
 0=p_bsin\theta+p_Bsin\epsilon (4) 
 \end{equation}
 \\ \\
-Using $p=\sqrt{2mT}$ with kinetic energy $T$ and substituting (4) into (3), we have \\ \\
-\[T_B = \frac{1}{m_B}[m_aT_a+m_bT_b-2\sqrt{m_am_bT_aT_b}cos\theta\]. \\ \\
-Going further, we can take the Q-value, or the difference in mass energy between the initial and final nuclei, which is given as \\ \\
-\[Q=(m_a+m_A-m_b-m_B)c^2\]\\ \\
-Using (1) and rearranging with $E=T+\frac{p^2}{2m}$,\\ \\
-\[Q = (m_a-m_b-m_c)c^2=T_b-T_a+T_b=T_b-T_a+\frac{1}{m_B}[m_aT_a+m_bT_b-2\sqrt{m_am_bT_aT_b}cos\theta\]\\ \\
-The excitation of the residual nucleus can then be expressed as\\ \\ \[Q = Q_0-E_{ex} (5)\],\\ \\
+Using $p=\sqrt{2mT}$ with kinetic energy $T$ and substituting (4) into (3), we have \\
+\[T_B = \frac{1}{m_B}[m_aT_a+m_bT_b-2\sqrt{m_am_bT_aT_b}cos\theta\]. 
+Going further, we can take the Q-value, or the difference in mass energy between the initial and final nuclei, which is given as \\
+\[Q=(m_a+m_A-m_b-m_B)c^2\]
+Using (1) and rearranging with $E=T+\frac{p^2}{2m}$,\\
+\[Q = (m_a-m_b-m_c)c^2=T_b-T_a+T_b=T_b-T_a+\frac{1}{m_B}[m_aT_a+m_bT_b-2\sqrt{m_am_bT_aT_b}cos\theta\]\\
+The excitation of the residual nucleus can then be expressed as\\\[Q = Q_0-E_{ex} (5)\],\\
 where $Q_0$ is the Q-value of the ground state in $^9B$ and $E_{ex}$ is the excitation energy of the nucleus.
 The excited states of $^9B$ is described by \\ \\
 \[E_{ex} = Q_0 - (m_a+m_A-m_b-m_B)c^2\\ \\=Q_0-T_b-T_a+T_B\\ \\=Q_0-T_b-T_a+\frac{1}{m_B}[m_aT_a+m_bT_b-2\sqrt{m_am_bT_aT_b}cos\theta])\].
-\\ \\
+\\ 
 Regarding neutron interaction with scintillators, the primary means of energy transfer is via elastic scattering. The maximum amount of 
 energy transferred can be parameterized as $E'=\frac{A-1}{A+1}E$. For deuterium, $A=2$, so $E_{dep}=\frac{8}{9}E$. From this energy, the 
-light-output can be parameterized as \cite{LAWRENCE201321} \\ \\
-$L=aE_{dep}-b(1-e^{-cE_{dep}})$ \\ \\
-where a, b, and c are parameters that must be experimentally characterized. These coefficients have been determined via previous work. 
-The table below is adapted from \cite{morelock2022characterization}.
+light-output can be parameterized as \cite{LAWRENCE201321} \\ 
+\[L=aE_{dep}-b(1-e^{-cE_{dep}})\]
+where a, b, and c are parameters that must be experimentally characterized.
+
+
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{xcschematic.png}
+  \includegraphics[width=0.6\textwidth]{xcschematic.png}
   \caption{Visual example of kinematics in cross section calculation.}
   \label{fig:Cross Section Model}
 \end{figure}
@@ -140,38 +137,35 @@ States in nuclei are further characterized by their total spin $J$ and their par
 %\input chapter3
 \chapter{CATRiNA and CHARON}
 
-\subsection{CATRiNA}
+\section{CATRiNA}
 
 In order to detect particles such as a neutron, scintillators are used. Within the field of nuclear physics, it is customary to distinguish the type of neutron radiation based on the energy range of the observed neutrons. Fast neutrons are typically considered to be greater than 1 MeV in kinetic energy. Since the cross section for neutron interactions in most materials is strongly dependent on neutron energy, fast neutron detection relies on elastic scattering interactions. Scintillators function as a reliable way to determine neutron energy spectra. Scintillators refer to any material that emits light after interacting with radiation. This light is then converted into an electric signal via a Photomultiplier Tube (PMT).
 \\ \\
 The Compound Array for Transfer Reactions in Nuclear Astrophysics (CATRiNA) is an array of deuterated benzene scintillators. The scintillators are stored in a cylindrical container with two sizes: 4"x2" and 2"x2". The 4"x2" and 2"x2" scintillator is the EJ-315 deuterated liquid scintillator produced by Eljen Technology. The coupled Photomultiplier Tube (PMT) is the 9821B PMT developed by ET Enterprises for the 4"x2" scintillator and the Hamamatsu R7724 PMT for the 2"x2" scintillator. Both scintillators rely on the scintillation of deuterated benzene to accurately measure incoming neutron energies. The scintillating molecule, benzene, comprises a hexagon of carbon atoms with a deuterium atom bonded to each carbon atom. About two or three of the valence electrons of carbon occupy the $\sigma$ orbital in between the carbon and deuterium atoms and are strongly localized. The remaining electrons occupy the $\pi$ orbitals, which extend outside of the molecular plane and are not strongly localized \cite{BROOKS1979477}. Transitions between the $\pi$ orbital electrons are responsible for the luminescence seen within the deuterated benzene. A level diagram is provided in Figure. The electrons can be excited into either singlet or triplet states, denoted as $S_i$ and $T_i$ in Figure. Only transitions between levels emit gamma radiation. Transitions between vibrational states within the same level thermally de-excite. There are three main decays that can occur to excited $\pi$ orbital electrons. 
 \\ \\
-Prompt fluorescence refers to an electron, excited into a singlet state, decays into the ground state. This transition is short lived, with a half-life on the order of 1-80 ns. Phosphorescence refers to a process where a singlet electronic configuration is converted into a triplet configuration via inter-system crossing. Since the triplet has a much longer lifetime than the singlet with up to $10^{-3}$ s, this results in a delayed form of emission. Since the triplet state is at a lower energy relative to the singlet state, the emitted photon will have a longer wavelength than fluorescence photons. Delayed fluorescence refers to the process where a singlet state, converted into a triplet state, converts back into a singlet state before decaying via fluorescence \cite{knoll2010radiation}. The intensity of the fluorescence decays can be represented by the $I = Ae^{-t/\tau_f} + Be^{-t/\tau_t}$, where $\tau_s$ and $\tau_f$ refers to the mean lifetimes of the slow and fast components of the emission spectrum (delayed fluorescence and fluorescence) and $A$ and $B$ corresponds to the relative magnitude of each component. 
+Prompt fluorescence refers to an electron, excited into a singlet state, decays into the ground state. This transition is short lived, with a half-life on the order of 1-80 ns. Phosphorescence refers to a process where a singlet electronic configuration is converted into a triplet configuration via inter-system crossing. Since the triplet has a much longer lifetime than the singlet with up to $10^{-3}$ s, this results in a delayed form of emission. Since the triplet state is at a lower energy relative to the singlet state, the emitted photon will have a longer wavelength than fluorescence photons. Delayed fluorescence refers to the process where a singlet state, converted into a triplet state, converts back into a singlet state before decaying via fluorescence. The intensity of the fluorescence decays can be represented by the $I = Ae^{-t/\tau_f} + Be^{-t/\tau_t}$, where $\tau_s$ and $\tau_f$ refers to the mean lifetimes of the slow and fast components of the emission spectrum (delayed fluorescence and fluorescence) and $A$ and $B$ corresponds to the relative magnitude of each component. 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{OrganicLevelScheme.png} % Adjust width as needed
+  \includegraphics[width=0.6\textwidth]{OrganicLevelScheme.png} % Adjust width as needed
   \caption{Organic Level Scheme} % Add a caption
   \label{fig:levels_o_scin} % Add a label for cross-referencing
 \end{figure}
 \\ \\
-These two decays are basis of the Pulse-Shape Discrimination (PSD) technique for separating n-$\gamma$ events. The relative magnitude of each component of the emission spectrum is dependent upon the type of incident radiation. $\gamma$ radiation typically has a strong prompt fluorescence component but a small delayed fluorescence component. Neutron radiation has a smaller prompt fluorescence component but a larger delayed fluorescence component. This allows for the discrimination of these events via long and short gates. As shown in Figure, the long gate is the total integral of the signal while the short gate is an integral over the rise time. The tail gate (long integral - short integral) can then be defined. This "tail integral" is consistently greater for neutron-induced events than $\gamma$-induced events, resulting in a PSD spectrum where each tail corresponds to a different radiation type. 
+These two decays are basis of the Pulse-Shape Discrimination (PSD) technique for separating n-$\gamma$ events. The relative magnitude of each component of the emission spectrum is dependent upon the type of incident radiation. $\gamma$ radiation typically has a strong prompt fluorescence component but a small delayed fluorescence component. Neutron radiation has a smaller prompt fluorescence component but a larger delayed fluorescence component. This allows for the discrimination of these events via long and short gates. As shown in Figure, the long gate is the total integral of the signal while the short gate is an integral over the rise time. The tail gate (long integral - short integral) can then be defined. This "tail integral" is consistently greater for neutron-induced events than $\gamma$-induced events, resulting in a PSD spectrum where each tail corresponds to a different radiation type \cite{knoll2010radiation}. 
 \\ \\
 Referring to the light-output incident radiation emits when interacting with scintillators, it is customary to define the unit electron-volt electron equivalent, or eVee. An eVee is defined as the light-output an electron with 1 ev of energy gives off. The PSD spectra obtained in this prospectus are plotted in terms of keVee and PSD ratio. The value of the long integral is defined in terms of arbitrary units, so a calibration is applied using $^{60}Co$ and $^{137}Cs$. These two sources contain well-known Compton edges which allows for a linear calibration of the long integral into units of keVee. 
 \\ \\
 
-\subsection{CHARON}
-
-
 %\input chapter4
 \chapter{Current Work}
-\subsection{08/26/24}
+\section{08/26/24}
 
 
 An experiment was run from 08/19/24 to 08/26/24 populating states in $^9B$ with the $^7Li(^3He,n)^9B$ reaction. This was achieved with the FN Tandem accelerator at the FSU John D. Fox lab. The $^3He$ beam has an energy of 7 MeV in  the laboratory frame. This was the lowest possible beam energy the Tandem accelerator could coherently transmit the $^3He$ beam. This energy was minimized to reduce neutron energy so maximum separation could be achieved between different states. To record the data in a digitial format, CAEN digitizers were used to digitize signals. The logic setup is listed in the figure below.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{2024_3hen_logic.png}
+  \includegraphics[width=0.6\textwidth]{2024_3hen_logic.png}
   \caption{Cartoon showing logic setup used for the CAEN digitzers. The RF signal was recorded in the 1730 board.}
   \label{fig:Logic Setup}
 \end{figure}
@@ -181,43 +175,43 @@ The CATRiNA detectors were also placed at backwards angles to further reduce neu
 This beam was incident to a target ladder containing three $^7Li$ targets, one blank target, one $^{12}C$ target, and one phosphor target. The $^{12}C$ and $^7Li$ targets had a thickness of 200 $\mu g/cm^2$. Since $^7Li$ quickly oxidizes when exposed to air, the target ladder had to be mounted under vacuum. The phosphor target was used to align the beam due with its luminescence in response to incident radiation. The $^{12}C$ target was used to populate the ground state of $^{14}O$ via the $^{12}C(^3He,n)^{14}O$ reaction. This resulted in a single neutron group being visible the resulting excitation spectrum. The presence of this peak allowed for corrections to be applied to the angular displacements and distances of the CATRiNA detectors. The Q-value of this reaction is -1.15 MeV, which can be seen as a sharp peak in the figure below. The sharpness of this peak results from the ground state of $^{14}O$ having a half-life of 70.606 s, which results in a narrow resonance width. Using this correction, information regarding the populated states in $^{9}B$ where extracted. The plots regarding the $^{12}C(^3He,n)^{14}O$ reaction can be seen below. 
 
 \begin{figure}[h!]
-  \centering
-  \includegraphics[width=1\textwidth]{high_thresh_psd.png}
-  \caption{PSD spectrum.}
+  %\centering
+  \includegraphics[width=0.6\textwidth]{high_thresh_psd.png}
+  \caption{PSD spectrum with high threshold.}
   \label{fig:High Threshold PSD}
 \end{figure}
 
 \begin{figure}[h!]
-  \centering
-  \includegraphics[width=1\textwidth]{low_thesh_psd.png}
-  \caption{PSD spectrum.}
+  %\centering
+  \includegraphics[width=0.6\textwidth]{low_thesh_psd.png}
+  \caption{PSD spectrum with low threshold.}
   \label{fig:Low Threshold}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{14o_tof.png}
+  \includegraphics[width=0.6\textwidth]{14o_tof.png}
   \caption{ToF spectrum for the $^{12}C(^3He,n)^{14}O$ reaction observed by a CATRiNA detector at 133.5 degrees.}
   \label{fig:14O ToF}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{carbon_gated_tof.png}
+  \includegraphics[width=0.6\textwidth]{carbon_gated_tof.png}
   \caption{ToFg spectrum.}
   \label{fig:14O ToF Gated}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{qval_carbon.png}
+  \includegraphics[width=0.6\textwidth]{carbon_qval_133.5.png}
   \caption{Q-value spectrum.}
   \label{fig:Carbon Q Value}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{carbon_excitation_2.png}
+  \includegraphics[width=0.6\textwidth]{carbon_ex_133.5.png}
   \caption{Q-value spectrum.}
   \label{fig:Carbon Excitation}
 \end{figure}
@@ -226,44 +220,38 @@ The ToF and excitation spectra for the $^{7}Li(^3He,n)^{9}B$ reaction can be see
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{tofspectrum.png}
-  \caption{ToF spectrum for the $^{7}Li(^3He,n)^{9}B$ reaction observed by a CATRiNA detector.}
-  \label{fig:9b_tof}
+  \includegraphics[width=0.6\textwidth]{tof_123.png}
+  \caption{7Li tof plot.}
+  \label{fig:Li ToF}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{peak_id.png}
+  \includegraphics[width=0.6\textwidth]{peak_id.png}
   \caption{Comparison of ToF spectra using $^7Li$, $^{12}C$, and phosphor targets.}
   \label{fig:9b Peak Comparison}
 \end{figure}
 
 To separate the neutron events from the $\gamma$ events, gates were applied to the PSD spectrum. The PSD spectra are all calibrated in units of keVee. Two threshold values were applied to the PSD spectra. In previous works, a threshold of 55 keVee and 85 keVee was applied to the 2"x2" and 4"x2" detectors. Due to the high beam-stop induced background, our minimum thresholds had to be increased significantly. The lowest value threshold value used is 200 keVee for both detector types. A ToF and excitation spectrum for a detector located at 123 degrees is shown below. 
-\\ \\
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=1\textwidth]{tof_123.png}
-  \caption{Comparison of ToF spectra using $^7Li$, $^{12}C$, and phosphor targets.}
-  \label{fig:Li ToF}
-\end{figure}
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=1\textwidth]{Excitation_plot.png}
-  \caption{Comparison of ToF spectra using $^7Li$, $^{12}C$, and phosphor targets.}
+  \includegraphics[width=0.6\textwidth]{Excitation_plot.png}
+  \caption{7Li excitation plot}
   \label{fig:Excitation of 9B}
 \end{figure}
 
 
-The excitation spectrum does not readily admit clearly defined states within $^9B$. In the neutron-gated ToF spectrum, the expected locations of the highly excited $^9B$ states are shown in the spectrum. Due to the low timing resolution, the states are not well-separated within the spectrum. In comparison to previous results found by K. Gul et al. \cite{Gul}, the spectra from the current work does not display a prominent ground state peak. However, there appears to be prominent 2.345 and 4.8 MeV peaks within the current spectra. Gul does not list the known 2.751 and 2.78 MeV states separately. In our case, due to poor timing resolution, the two states cannot be separately resolved in this work. A reason the ground state does not display a prominent peak in the ToF spectrum can be attributed to the energy of neutrons within the reaction. Neutrons ejected at 123 degrees from the ground state would have an energy of 10.81 MeV, which indicates that our detectors were not optimized for detecting neutrons at energies greater than 9 MeV. From the excitation spectrum, there appears to be a state in $^9B$ with an measured excitation energy of $E_x = 0.12 \pm 0.31$ MeV which is consistent with the known $^9B$ ground state width of 0.54 keV. There also appears to be  prominent states at $E_x = 2.14 \pm 0.4$ MeV, $E_x = 2.99 \pm 0.32 MeV$, which is consistent with the known $2.345$ MeV state. There is evidence that the 4.8 MeV state is populated at a measured value of $4.44 \pm 1.1$ MeV, which is consistent with the measured energy and width of the 4.8 MeV state in $^9B$. 
-
-\\ \\
+The excitation spectrum does not readily admit clearly defined states within $^9B$. In the neutron-gated ToF spectrum, the expected locations of the highly excited $^9B$ states are shown in the spectrum. Due to the low timing resolution, the states are not well-separated within the spectrum. In comparison to previous results found by K. Gul et al. \cite{gul197018o}, the spectra from the current work does not display a prominent ground state peak. However, there appears to be prominent 2.345 and 4.8 MeV peaks within the current spectra. Gul does not list the known 2.751 and 2.78 MeV states separately. In our case, due to poor timing resolution, the two states cannot be separately resolved in this work. A reason the ground state does not display a prominent peak in the ToF spectrum can be attributed to the energy of neutrons within the reaction. Neutrons ejected at 123 degrees from the ground state would have an energy of 10.81 MeV, which indicates that our detectors were not optimized for detecting neutrons at energies greater than 9 MeV. From the excitation spectrum, there appears to be a state in $^9B$ with an measured excitation energy of $E_x = 0.12 \pm 0.31$ MeV which is consistent with the known $^9B$ ground state width of 0.54 keV. There also appears to be  prominent states at $E_x = 2.14 \pm 0.4$ MeV, $E_x = 2.99 \pm 0.32 MeV$, which is consistent with the known $2.345$ MeV state. There is evidence that the 4.8 MeV state is populated at a measured value of $4.44 \pm 1.1$ MeV, which is consistent with the measured energy and width of the 4.8 MeV state in $^9B$. 
 
 From this work, states in  $^9B$ where populated that were consistent with known states found in previous studies. From this dataset, it was not possible to resolve the first excited state of $^9B$. This experiment was run using a data acquisition system that was not properly tested for ToF experiments. As a result, the fine timestamp used by the digitizers was not used, limiting the timing resolution to ~2 ns.
 
-\subsection{02/23/26}
-A more precise measurement was required to unambiguously characterize this state. A setup that mirrors the previous setup was employed. A further constraint was added using a $\DeltaE-E$ telescope using a 65-micron thick S2 silicon detector and a 1001-micron thick S1 silicon detector. This telecscope will be in coincidence with the CATRiNA detectors to measure the breakup of the $^9B$ residual nucleus. Since charged particles will deposit different amounts of energy within both silicon detectors, a further PID can be applied to the breakup products of $^9B$, which are listed in the table below. Since validation of the silicon detector events requires a CATRiNA signal, events without either $\gamma$ or neutron events will not be recorded. A neutron-charged particle coincidence matrix can be formed which allows for the reconstruction of the residual decay. 
+\newpage
 
+\section{02/23/26}
+A more precise measurement was required to unambiguously characterize this state. A setup that mirrors the previous setup was employed. A further constraint was added using a $\Delta E-E$ telescope using a 65-micron thick S2 silicon detector and a 1001-micron thick S1 silicon detector. This telecscope will be in coincidence with the CATRiNA detectors to measure the breakup of the $^9B$ residual nucleus. Since charged particles will deposit different amounts of energy within both silicon detectors, a further PID can be applied to the breakup products of $^9B$, which are listed in the table below. Since validation of the silicon detector events requires a CATRiNA signal, events without either $\gamma$ or neutron events will not be recorded. A neutron-charged particle coincidence matrix can be formed which allows for further discrimination for reaction channels. \\
+
+\begin{center}
 \begin{tabular}{|c|c|}
   \hline
   Possible $^7Li + ^3He$ reaction & Q-Value (MeV) \\
@@ -283,15 +271,20 @@ A more precise measurement was required to unambiguously characterize this state
   $\alpha + t + ^3He$ & -2.47 \\
   \hline
 \end{tabular}
+\end{center}
 
 %\input chapter5
 \chapter{Future Work}
-\-Investigate highly excited states in $^9B$
-\-Investiage states in $^9C$
+\begin{itemize}
+  \item Rerun experiment using silicon detector array to further constrain neutron spectra\\
+  \item Investigate states in $^9C$\\
+  \item Examine gamma-neutron coincidence higher-mass nuclei\\
+\end{itemize}
+
+\newpage
 
 \printbibliography
-\bibliographystyle{plain}
-\bibliography{source}
-
+%\bibliographystyle{plain}
+%\bibliography{source}
 
 \end{document}
